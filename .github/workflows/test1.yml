@@ -13,10 +13,14 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm ci
+        run: npm Install --force
 
       - name: Run Cypress tests
         run: npx cypress run
+
+      - name: Verify Cypress install
+        run: npx cypress verify
+ 
 
       - name: Upload artifacts (screenshots + videos)
         uses: actions/upload-artifact@v4
