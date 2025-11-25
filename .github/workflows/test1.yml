@@ -13,17 +13,6 @@ jobs:
         with:
           node-version: "20"
 
-      # Install required OS packages for running Chrome/Electron
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libgtk2.0-0 libgtk-3-0 libgbm-dev libnss3 \
-            libasound2 libxss1 libxtst6
-
-      - name: Install NPM dependencies
-        run: npm install  # (use --force ONLY if needed)
-
       - name: Verify Cypress installation
         run: npx cypress verify
 
